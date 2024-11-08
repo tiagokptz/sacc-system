@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        form div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex">
+            <h1>Registrar-se</h1>
+            <form>
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Senha: </label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <label for="confirm_password">Confirmar senha:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <!--
+                <div>
+                    <label for="course">Curso:</label>
+                    <input type="text" id="course" name="course" required>
+                </div>
+                trocar pra um select
+                <div>
+                    <label for="institution">Instituição: </label>
+                    <input type="text" id="institution" name="institution" required>
+                </div>
+                -->
+                <div>
+                    <input type="submit" value="Registra-se" class="button">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

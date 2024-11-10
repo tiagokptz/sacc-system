@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer login</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div class="container">
-        <div class="flex">
+    <div class="container flex">
+        <div class="flex form">
             <h1>Login</h1>
             <form>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="password">Senha:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div>
-                    <input type="submit" value="Entrar" class="button">
-                </div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Entrar" class="button">
             </form>
-            <p>Não possui conta? <a href="register.html">Registrar-se</a></p>
+            <p>Não possui conta? <a th:href="@{/register}">Registrar-se</a></p>
         </div>
     </div>
 </body>

@@ -13,7 +13,7 @@ public class FrequencyModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer code;
 
-    @Column(name = "date")
+    @Column(name = "date", nullable = false)
     private LocalDate date;
 
     @ManyToOne

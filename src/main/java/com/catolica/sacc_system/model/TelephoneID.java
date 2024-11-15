@@ -6,11 +6,11 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public class CoordinatorPhoneID implements Serializable {
+public class TelephoneID implements Serializable {
     @Column(name = "idCoordinator")
     private Integer idCoordinator;
 
-    @Column(name = "telephone")
+    @Column(name = "telephone", length = 20)
     private String telephone;
 
 }

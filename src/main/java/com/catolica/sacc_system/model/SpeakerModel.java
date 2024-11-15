@@ -4,9 +4,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "name_speakers")
-public class NameSpeakersModel {
+public class SpeakerModel {
     @EmbeddedId
-    private NameSpeakersID id;
+    private SpeakerID id;
 
     @ManyToOne
     @MapsId("codeLecture")

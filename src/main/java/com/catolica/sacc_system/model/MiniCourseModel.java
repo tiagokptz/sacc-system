@@ -20,22 +20,22 @@ public class MiniCourseModel {
     @JoinColumn(name = "id_coordinator", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_coord_course_FK"))
     private CoordinatorModel coordinator;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 70)
     private String title;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = false, length = 350)
     private String description;
 
-    @Column(name = "number_vacancies")
+    @Column(name = "number_vacancies", nullable = false)
     private Integer number_vacancies; //fazer um CHECK > 0
 
-    @Column(name = "start_date")
+    @Column(name = "start_date", nullable = false)
     private LocalDate start_date;
 
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = false)
     private LocalDate end_date;
 
-    @Column(name = "shedule")
+    @Column(name = "shedule", nullable = false)
     private LocalTime shedule;
 
     @ManyToMany(mappedBy = "courses")

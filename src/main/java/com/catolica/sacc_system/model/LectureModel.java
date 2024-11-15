@@ -18,13 +18,13 @@ public class LectureModel {
     @JoinColumn(name = "id_coordinator", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_coord_lecture_FK"))
     private CoordinatorModel coordinator;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, length = 70)
     private String title;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = false, length = 350)
     private String description;
 
-    @Column(name = "shedule")
+    @Column(name = "shedule", nullable = false)
     private LocalTime shedule;
 
     @ManyToMany(mappedBy = "lectures")

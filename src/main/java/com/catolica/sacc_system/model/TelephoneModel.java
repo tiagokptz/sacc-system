@@ -4,9 +4,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "coordinator_phones")
-public class PhonesCoordinatorModel {
+public class TelephoneModel {
     @EmbeddedId
-    private CoordinatorPhoneID id;
+    private TelephoneID id;
 
     @ManyToOne
     @MapsId("idCoordinator")

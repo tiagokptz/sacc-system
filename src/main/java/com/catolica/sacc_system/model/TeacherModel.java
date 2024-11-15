@@ -23,10 +23,10 @@ public class TeacherModel {
     private String password;
 
     @Column(name = "account_type", nullable = false, length = 20)
-    private String account_type;
+    private String accountType;
 
     @Column(name = "url_photo")
-    private String url_photo;
+    private String photoUrl;
 
     @Column(name = "description", length = 250)
     private String description;

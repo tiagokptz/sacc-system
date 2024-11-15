@@ -23,10 +23,10 @@ public class StudentModel {
     private String password;
 
     @Column(name = "account_type", nullable = false, length = 20)
-    private String account_type;
+    private String accountType;
 
     @Column(name = "url_photo")
-    private String url_photo;
+    private String photoUrl;
 
     @Column(name = "course", nullable = false, length = 35)
     private String course;
@@ -35,7 +35,7 @@ public class StudentModel {
     private String institution;
 
     @Column(name = "payment_confirm")
-    private boolean payment_confirm;
+    private boolean paymentConfirm;
 
     @ManyToMany
     @JoinTable(

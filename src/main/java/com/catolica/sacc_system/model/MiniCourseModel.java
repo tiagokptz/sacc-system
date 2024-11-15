@@ -27,13 +27,13 @@ public class MiniCourseModel {
     private String description;
 
     @Column(name = "number_vacancies", nullable = false)
-    private Integer number_vacancies; //fazer um CHECK > 0
+    private Integer numberVacancies; //fazer um CHECK > 0
 
     @Column(name = "start_date", nullable = false)
-    private LocalDate start_date;
+    private LocalDate startDate;
 
     @Column(name = "end_date", nullable = false)
-    private LocalDate end_date;
+    private LocalDate endDate;
 
     @Column(name = "shedule", nullable = false)
     private LocalTime shedule;

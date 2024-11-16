@@ -1,6 +1,12 @@
 package com.catolica.sacc_system.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
@@ -10,32 +16,40 @@ import java.util.Set;
 
 @Entity
 @Table(name = "mini_course")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class MiniCourseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "code")
     private Integer code;
 
     @ManyToOne
-    @JoinColumn(name = "id_coordinator", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_coord_course_FK"))
+    @JoinColumn(name = "id_coordinator")
     private CoordinatorModel coordinator;
 
-    @Column(name = "title", nullable = false, length = 70)
+    @NotNull
+    @Size(min = 35, max = 70)
     private String title;
 
-    @Column(name = "description", nullable = false, length = 350)
+    @NotNull
+    @Size(min = 50, max = 350)
     private String description;
 
-    @Column(name = "number_vacancies", nullable = false)
+    @NotNull
+    @Column(name = "number_vacancies")
     private Integer numberVacancies; //fazer um CHECK > 0
 
-    @Column(name = "start_date", nullable = false)
+    @NotNull
+    @Column(name = "start_date")
     private LocalDate startDate;
 
-    @Column(name = "end_date", nullable = false)
+    @NotNull
+    @Column(name = "end_date")
     private LocalDate endDate;
 
-    @Column(name = "shedule", nullable = false)
+    @NotNull
     private LocalTime shedule;
 
     @ManyToMany(mappedBy = "courses")

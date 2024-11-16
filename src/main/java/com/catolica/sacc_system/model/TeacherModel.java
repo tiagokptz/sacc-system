@@ -1,34 +1,55 @@
 package com.catolica.sacc_system.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "teacher")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class TeacherModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name", nullable = false, length = 50)
+    @NotNull
+    @NotBlank
+    @Size(min = 3, max = 50)
     private String name;
 
-    @Column(name = "email", nullable = false, unique = true, length = 100)
+    @NotNull
+    @NotBlank
+    @Email
+    @Column(unique = true)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 50)
+    @NotNull
+    @NotBlank
+    @Size(min = 6, max = 50)
     private String password;
 
-    @Column(name = "account_type", nullable = false, length = 20)
+    @NotNull
+    @Column(name = "account_type")
     private String accountType;
 
+    @NotNull
     @Column(name = "url_photo")
     private String photoUrl;
 
-    @Column(name = "description", length = 250)
+    @NotNull
+    @Size(min = 50, max = 250)
     private String description;
 
     @ManyToMany

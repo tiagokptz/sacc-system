@@ -1,6 +1,12 @@
 package com.catolica.sacc_system.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalTime;
 import java.util.HashSet;
@@ -8,23 +14,28 @@ import java.util.Set;
 
 @Entity
 @Table(name = "lecture")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class LectureModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "code")
     private Integer code;
 
     @ManyToOne
-    @JoinColumn(name = "id_coordinator", referencedColumnName = "id", foreignKey = @ForeignKey(name = "id_coord_lecture_FK"))
+    @JoinColumn(name = "id_coordinator")
     private CoordinatorModel coordinator;
 
-    @Column(name = "title", nullable = false, length = 70)
+    @NotNull
+    @Size(min = 35, max = 70)
     private String title;
 
-    @Column(name = "description", nullable = false, length = 350)
+    @NotNull
+    @Size(min = 50, max = 350)
     private String description;
 
-    @Column(name = "shedule", nullable = false)
+    @NotNull
     private LocalTime shedule;
 
     @ManyToMany(mappedBy = "lectures")

@@ -7,20 +7,20 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div class="container flex">
-        <div class="flex form">
-            <h1>Login</h1>
-            <form>
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+<div class="container flex">
+    <div class="flex form">
+        <h1>Login</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
 
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
 
-                <input type="submit" value="Entrar" class="button">
-            </form>
-            <p>Não possui conta? <a th:href="@{/register}">Registrar-se</a></p>
-        </div>
+            <input type="submit" value="Entrar" class="button">
+        </form>
+        <p>Não possui conta? <a th:href="@{/register}">Registrar-se</a></p>
     </div>
+</div>
 </body>
 </html>

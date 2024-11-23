@@ -1,4 +1,4 @@
-package com.catolica.sacc_system.model;
+package com.catolica.sacc_system.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -7,20 +7,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.cglib.core.Local;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "mini_course")
+@Table(name = "lecture")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MiniCourseModel {
+public class LectureModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer code;
@@ -38,23 +36,8 @@ public class MiniCourseModel {
     private String description;
 
     @NotNull
-    @Column(name = "number_vacancies")
-    private Integer numberVacancies; //fazer um CHECK > 0
-
-    @NotNull
-    @Column(name = "start_date")
-    private LocalDate startDate;
-
-    @NotNull
-    @Column(name = "end_date")
-    private LocalDate endDate;
-
-    @NotNull
     private LocalTime shedule;
 
-    @ManyToMany(mappedBy = "courses")
-    private Set<TeacherModel> teachers = new HashSet<>();
-
-    @ManyToMany(mappedBy = "courses")
+    @ManyToMany(mappedBy = "lectures")
     private Set<StudentModel> students = new HashSet<>();
 }

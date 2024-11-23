@@ -1,4 +1,4 @@
-package com.catolica.sacc_system.model;
+package com.catolica.sacc_system.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

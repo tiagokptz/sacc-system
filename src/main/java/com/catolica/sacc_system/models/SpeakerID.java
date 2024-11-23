@@ -1,6 +1,5 @@
-package com.catolica.sacc_system.model;
+package com.catolica.sacc_system.models;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
